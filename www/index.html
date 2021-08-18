@@ -1,0 +1,23 @@
+<html>
+    <head>
+	<title>XY</title>
+	<script type="text/javascript" src="javascript/file-attachment-element.js"></script>
+	<script type="text/javascript" src="javascript/xy.init.js"></script>	
+    </head>
+    <body style="margin:0px;">
+	<div id="coords" style="position:fixed; background-color:#fff;padding:10px; top: 0; right:0;"></div>
+	<div id="image-wrapper"></div>
+	<div id="image-meta"></div>
+
+	<file-attachment>
+	    <input type="file" />
+	</file-attachment>
+	
+	<script>
+	    document.addEventListener('file-attachment-accepted', function(event) {
+	    console.log("WTF", event);
+	    });
+	 console.log("POO");
+	</script>
+    </body>
+</html>
