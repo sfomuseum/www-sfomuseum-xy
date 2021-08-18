@@ -9,15 +9,10 @@
 	<div id="image-wrapper"></div>
 	<div id="image-meta"></div>
 
-	<file-attachment>
-	    <input type="file" />
+	<file-attachment input="file">
+	    Drop files here or
+	    <input type="file" id="file" multiple="">
 	</file-attachment>
 	
-	<script>
-	    document.addEventListener('file-attachment-accepted', function(event) {
-	    console.log("WTF", event);
-	    });
-	 console.log("POO");
-	</script>
     </body>
 </html>

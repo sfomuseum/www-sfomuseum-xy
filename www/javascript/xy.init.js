@@ -1,14 +1,10 @@
 window.addEventListener("load", function load(event){
 
-    console.log("init xy");
-    
     // START OF file-attachment stuff
     // https://github.com/github/file-attachment-element
 
     document.addEventListener('file-attachment-accepted', function(event) {
 
-	console.log("accepted");
-	
 	var attachments = event.detail.attachments;
 
 	var first = attachments[0];
@@ -38,15 +34,15 @@ window.addEventListener("load", function load(event){
 
 	    im.onclick = function(e){
 
-		console.log("EVENT", e);
+		var el = e.target;
 		
-		var b = this.getBoundingClientRect()
-		
+		var b = el.getBoundingClientRect()
+
 		var bx = b.x - (b.x * 2)
-		var by = b.y - (b.x * 2)	 
+		var by = b.y - (b.y * 2)	 
 		
-		var x = bx + e.x - this.offsetLeft;
-		var y = by + e.y - this.offsetTop;
+		var x = bx + e.x - el.offsetLeft;
+		var y = by + e.y - el.offsetTop;
 
 		// TBD: https://github.com/github/clipboard-copy-element
 
@@ -65,6 +61,4 @@ window.addEventListener("load", function load(event){
     })
 
     // END OF file-attachment stuff
-
-    console.log("OMGWTF");
 });
